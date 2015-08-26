@@ -1,4 +1,4 @@
-*{margin:0px;padding:0px;}
+*{margin: 0px;padding: 0px;list-style-type: none;}
 html,body{
 	height: 100%;
 	overflow: hidden;
@@ -65,26 +65,48 @@ html,body{
 }
 .introduce{
 	position: absolute;
-	width: 50%;
+	width: 60%;
 	height: 50%;
 	border: 1px solid #ccc;
-	/*line-height: 30px;*/
 	padding: 40px;
 	top: 0px;
 	right: 0px;
 	left: 0px;
 	bottom: 0px;
 	margin: auto;
-	font-size: 30px;
+	font-size: 28px;
 	color: #fff;
-	line-height: 40px;
-	/*font-weight: bolder;*/
+	line-height: 45px;
+	font-weight: bolder;
 	background-color: rgba(0,0,0,.5);
 	-webkit-box-shadow: 0px 0px 10px 10px  #00ffcc inset;
 	-moz-box-shadow: 0px 0px 10px 10px  #00ffcc inset;
 	-ms-box-shadow: 0px 0px 10px 10px  #00ffcc inset;
 	-o-box-shadow: 0px 0px 10px 10px  #00ffcc inset;
 	box-shadow: 0px 0px 10px 10px  #00ffcc inset;
+	overflow: auto;
+}
+/* 左侧控制 */
+.leftCtrl{
+	width: 30px;
+	height: 90px;
+	background-color: rgba(200,255,100,.3);
+	position: fixed;
+	left: 10px;
+	top: 50%;
+	margin-top: -50px;
+	border-radius: 20px;
+
+}
+.leftCtrl ul li{
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	margin: 10px 0px 10px 10px;
+	border-radius: 50%;
+}
+.leftCtrl ul li:first-child{
+	background-color: #000;
 }
 
 
