@@ -259,13 +259,13 @@
 			    	// bottom
 			    	console.log('bottom');
 			        _this.data.mobileTo = 'bottom';
-			        _this.down(ele, _this.data.$pageEle.length);
+			        _this.up(ele, _this.data.$pageEle.length);
 			    }
 			    else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
 			    	// top
 			    	console.log('top');
 			        _this.data.mobileTo = 'top';
-			        _this.up(ele);
+			        _this.down(ele);
 			    }
 			    else{
 			    	// just touch
