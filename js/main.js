@@ -24,7 +24,8 @@
 			// 所有页面
 			$pageEle: $('.page'),
 			// 首页显示
-			introduce: '我是许岩，现就读于哈尔滨理工大学测通学院物联网工程专业，爱前端，爱游戏，爱运动。性格开朗、稳重、有活力，待人热情、真诚，能吃苦耐劳，有较强的实际动手能力和团体协作精神。'
+			introduce: '我是许岩，现就读于哈尔滨理工大学测通学院物联网工程专业，爱前端，爱游戏，爱运动。性格开朗、稳重、有活力，待人热情、真诚，能吃苦耐劳，有较强的实际动手能力和团体协作精神。',
+			mobileTo:''
 		},
 		
 		// 页面滚动函数
@@ -45,15 +46,22 @@
 			}
 			_this.introduce();
 			_this.ctrlTo();
+			_this.mobile();
 		},
 
 		// 鼠标滚轮下滑 fn 回调函数
 		down: function(ele, pageLen, handler, fn) {
 			var _this = this;
-			_this.removeEvent(ele, 'mousewheel', handler);
+			if(_this.browser().mobile === true){
+				$('body').unbind('touchmove');
+				var timerMobile = setTimeout(function(){
+					_this.mobile();
+				},800);
+			}
+			_this.removeEvent(ele, 'mousewheel',handler);
 			// 延迟事件
 			var timer = setTimeout(function(){
-				_this.addEvent(ele, 'mousewheel', handler);
+				_this.addEvent(ele, 'mousewheel',handler);
 			},1000);
 			if(_this.data.count < pageLen){
 				console.log(_this.data.count);
@@ -89,6 +97,12 @@
 		// 鼠标滚轮上滑
 		up: function (ele, handler) {
 			var _this = this;
+			if(_this.browser().mobile === true){
+				$('body').unbind('touchmove');
+				var timerMobile = setTimeout(function(){
+					_this.mobile();
+				},800);
+			}
 			_this.removeEvent(ele, 'mousewheel', handler);
 			var timer = setTimeout(function(){
 				_this.addEvent(ele, 'mousewheel', handler);
@@ -211,6 +225,53 @@
 					'display':'block'
 				});
 			}, 300);
+		},
+		// 移动端处理
+		mobile: function(){
+			var _this = this,
+				startX,
+				startY,
+				moveEndX,
+				moveEndY,
+				X,
+				Y,
+				ele = document.getElementsByTagName('body')[0];
+			$("body").bind("touchstart", function(e) {
+			    e.preventDefault();
+			    startX = e.originalEvent.changedTouches[0].pageX;
+			    startY = e.originalEvent.changedTouches[0].pageY;
+			});
+			$("body").bind("touchmove", function(e) {
+			    e.preventDefault();
+			    moveEndX = e.originalEvent.changedTouches[0].pageX;
+			    moveEndY = e.originalEvent.changedTouches[0].pageY;
+			    X = moveEndX - startX;
+			    Y = moveEndY - startY;
+			    if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+			    	// right
+			        _this.data.mobileTo = 'right';
+			    }
+			    else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+			    	// left
+			        _this.data.mobileTo = 'left';
+			    }
+			    else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+			    	// bottom
+			    	console.log('bottom');
+			        _this.data.mobileTo = 'bottom';
+			        _this.down(ele, _this.data.$pageEle.length);
+			    }
+			    else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+			    	// top
+			    	console.log('top');
+			        _this.data.mobileTo = 'top';
+			        _this.up(ele);
+			    }
+			    else{
+			    	// just touch
+			        _this.data.mobileTo = 'touch';
+			    }
+			});
 		},
 		browser: function(){
 		    var u = window.navigator.userAgent;
