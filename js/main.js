@@ -236,8 +236,8 @@
 				X,
 				Y,
 				ele = document.getElementsByTagName('body')[0];
-			$("body").bind("touchstart", function(e) {
-			    e.preventDefault();
+			$("body").on("touchstart", function(e) {
+			    // e.preventDefault();
 			    startX = e.originalEvent.changedTouches[0].pageX;
 			    startY = e.originalEvent.changedTouches[0].pageY;
 			});
@@ -260,6 +260,7 @@
 			    	console.log('bottom');
 			        _this.data.mobileTo = 'bottom';
 			        _this.up(ele);
+
 			    }
 			    else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
 			    	// top
