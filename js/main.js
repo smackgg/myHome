@@ -11,7 +11,6 @@
 		// $('.onload').css('display','none');
 		
 	}
-
 	// 主函数
 	var myHomeMain = function(){
 		this.init();
@@ -47,6 +46,7 @@
 			_this.introduce();
 			_this.ctrlTo();
 			_this.mobile();
+			_this.leftCtrl();
 		},
 
 		// 鼠标滚轮下滑 fn 回调函数
@@ -161,12 +161,12 @@
 				if(_this.browser().mobile === true){
 					// console.log(_this.browser().mobile);
 						$('.introduce').css({
-							'font-size': '1.2em',
+							'width': '70%',
+							'font-size': '1.1em',
 							'line-height': '1.6em',
 							'padding': '20px'
 					});
 				}
-			_this.addEvent(ele, 'mousewheel', _this.cancelBubble);
 			var timerInt = setInterval(function(){
 				if(arr.length > 0){
 					ele.innerHTML += arr.shift();
@@ -177,6 +177,18 @@
 		},
 		// 左侧控制圆点
 		leftCtrl: function(){
+				// 移动端处理
+				if(this.browser().mobile === true){
+					$('.leftCtrl>ul>li').css({
+						'width': '24px',
+						'height': '15px',
+						'margin': '6px 0px 0px 3px'
+					});
+					$('.leftCtrl').css({
+						'opacity':'0.4'
+					});
+
+				}
 				count = this.data.count;
 				$('.leftCtrl>ul>li[index='+ count + ']').css('background-color','#000');
 				$('.leftCtrl>ul>li:not([index='+ count + '])').css('background-color','#fff');
