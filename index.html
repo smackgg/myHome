@@ -9,6 +9,9 @@
 	<!--让部分国产浏览器默认采用高速模式渲染页面-->
 	<meta name="renderer" content="webkit">
 	<title>许岩的个人主页</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
@@ -27,7 +30,7 @@
 	        <li><a href="http://winnerweb.github.io/">我的博客<span class="sr-only">(current)</span></a></li>
 	        <li><a href="http://github.com/winnerweb">My GitHub</a></li>
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Me <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="#" index="1">首页</a></li>
 	            <li role="separator" class="divider"></li>
@@ -39,14 +42,12 @@
 	          </ul>
 	        </li>
 	        <li><a href="#" style="border:2px solid #ccc">滑动鼠标滚轮进行翻页。。</a></li>
-	        <li><a href="#" style="border:2px solid #ccc">此页面目前只是半成品。。</a></li>
+	      	<li><a href="#" style="border:2px solid #ccc">此页面目前只是半成品。。</a></li>
 	      </ul>
 	      <div class="form-group navbar-form navbar-right">
 	          <input type="text" class="form-control" placeholder="Search">
 	      </div>
 	</nav>
-
-
 	<div id="pageHome">
 		<div class="page page1"  index="1" id="page1">
 			<div class="container">
@@ -54,10 +55,74 @@
 			</div>
 		</div>
 		<div class="page page2" index="2">
-			<div class="container"></div>
+			<div class="container">
+				<ul id="skill">
+					<p>专业技能：</p>
+					<li id="skill1"> 
+						JavaScript & jQuery
+							<ul class="list">
+								<li>熟练掌握原生Javascript，能脱离jQuery等类库编码；</li>
+								<li>能运用模块化、面向对象的方式编程；熟悉Ajax、jsonp跨域请求；</li>
+								<li>熟练使用jQuery，了解其源码。</li>
+							</ul>
+					</li>
+					<li id="skill2" > 
+						HEML(5) & CSS(3) 
+						<ul class="list">
+							<li>能使用合适的结构编写兼容主流浏览器的页面布局；</li>
+							<li>了解 HTML5 新标签的语义；</li>
+							<li>能适当运用 CSS3 使页面在现代浏览器上效果更佳；</li>
+							<li>能熟练使用Chrome开发者工具、FireBug、Fiddler等工具辅助开发；</li>
+							<li>有响应式开发经验。</li>
+						</ul>
+					</li>
+					<li id="skill3">  Zepto & Bootstrap 
+						<ul class="list">
+							<li>了解移动端框架；</li>
+							<li>熟练使用 Bootstrap 进行开发，并了解其源码；</li>
+							<li>了解响应式开发。</li>
+						</ul>
+					</li>
+					<li id="skill4"> Ajax & jsonp 
+						<ul class="list">
+							<li> 熟悉 Ajax、jsonp 跨域请求；</li>
+							<li> 掌握利用Ajax进行不跳转页面刷新。</li>
+						</ul>
+					</li>
+					<li id="skill5">  Java & PHP & NodeJS
+						<ul class="list">
+							<li>了解 Java 以及 PHP 后台编程语言，能看懂后端语言代码；</li>
+							<li>熟悉面向对象编程。</li>
+							<li>了解 NodeJS 模块化；</li>
+						</ul>
+					</li>
+					<li id="skill6"> Photoshop 
+						<ul class="list">
+							<li>能进行简单的图片处理和平面设计；</li>
+							<li>能制作动画GIF；</li>
+							<li>能根据图片特征存成最优的格式。</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<div class="page page3" index="3">
-			<div class="container"></div>
+			<div class="container">
+				<div id="demo">
+				    <div class="row show-grid">
+			          <div class="col-md-8">.col-md-8</div>
+			          <div class="col-md-4">.col-md-4</div>
+			        </div>
+			        <div class="row show-grid">
+			          <div class="col-md-8">.col-md-8</div>
+			          <div class="col-md-4">.col-md-4</div>
+			        </div>
+			        <div class="row show-grid">
+			          <div class="col-md-8">.col-md-8</div>
+			          <div class="col-md-4">.col-md-4</div>
+			        </div>
+				</div>
+			</div>
 		</div>
 		<div class="page page4" index="4">
 			<div class="container"></div>
@@ -74,71 +139,67 @@
 	</div>
 
 	<div class="snow"></div>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/animations.css">
 	<script type="text/javascript" src="js/main.js"></script>
 
-
 <script type="text/javascript" src="js/ThreeCanvas.js"></script>
 <script type="text/javascript" src="js/Snow.js"></script>
 <script type="text/javascript">
-var SCREEN_WIDTH = window.innerWidth;
-var SCREEN_HEIGHT = window.innerHeight;
-var container;
+	var SCREEN_WIDTH = window.innerWidth;
+	var SCREEN_HEIGHT = window.innerHeight;
+	var container;
 
-var particle;
+	var particle;
 
-var camera;
-var scene;
-var renderer;
+	var camera;
+	var scene;
+	var renderer;
 
-var mouseX = 0;
-var mouseY = 0;
+	var mouseX = 0;
+	var mouseY = 0;
 
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
+	var windowHalfX = window.innerWidth / 2;
+	var windowHalfY = window.innerHeight / 2;
 
-var particles = []; 
-var particleImage = new Image();
-particleImage.src = 'http://7xl432.com1.z0.glb.clouddn.com/ParticleSmoke.png';
-function init() {
-	var container1 = document.getElementsByClassName('snow')[0];
-	camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
-	camera.position.z = 1000;
+	var particles = []; 
+	var particleImage = new Image();
+	particleImage.src = 'http://7xl432.com1.z0.glb.clouddn.com/ParticleSmoke.png';
+	function init() {
+		var container1 = document.getElementsByClassName('snow')[0];
+		camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+		camera.position.z = 1000;
 
-	scene = new THREE.Scene();
-	scene.add(camera);
-	renderer = new THREE.CanvasRenderer();
-	renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-	var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+		scene = new THREE.Scene();
+		scene.add(camera);
+		renderer = new THREE.CanvasRenderer();
+		renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+		var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+			
+		for (var i = 0; i < 500; i++) {
+
+			particle = new Particle3D( material);
+			particle.position.x = Math.random() * 2000 - 1000;
+			particle.position.y = Math.random() * 2000 - 1000;
+			particle.position.z = Math.random() * 2000 - 1000;
+			particle.scale.x = particle.scale.y =  1;
+			scene.add( particle );		
+			particles.push(particle); 
+		}
+		container1.appendChild( renderer.domElement );
+		// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+		// document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+		// document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 		
-	for (var i = 0; i < 500; i++) {
-
-		particle = new Particle3D( material);
-		particle.position.x = Math.random() * 2000 - 1000;
-		particle.position.y = Math.random() * 2000 - 1000;
-		particle.position.z = Math.random() * 2000 - 1000;
-		particle.scale.x = particle.scale.y =  1;
-		scene.add( particle );		
-		particles.push(particle); 
+		setInterval( loop, 1000 / 60 );
+		
 	}
-	container1.appendChild( renderer.domElement );
-	// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-	// document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-	// document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-	
-	setInterval( loop, 1000 / 60 );
-	
-}
 
-function onDocumentMouseMove( event ) {
+	function onDocumentMouseMove( event ) {
 
-	mouseX = event.clientX - windowHalfX;
-	mouseY = event.clientY - windowHalfY;
-}
+		mouseX = event.clientX - windowHalfX;
+		mouseY = event.clientY - windowHalfY;
+	}
 
 // function onDocumentTouchStart( event ) {
 
@@ -161,25 +222,25 @@ function onDocumentMouseMove( event ) {
 // 		mouseY = event.touches[ 0 ].pageY - windowHalfY;
 // 	}
 // }
-function loop() {
-	for(var i = 0; i<particles.length; i++){
-		var particle = particles[i]; 
-		particle.updatePhysics(); 
-		with(particle.position)
-		{
-			if(y<-1000) y+=2000; 
-			if(x>1000) x-=2000; 
-			else if(x<-1000) x+=2000; 
-			if(z>1000) z-=2000; 
-			else if(z<-1000) z+=2000; 
-		}				
+	function loop() {
+		for(var i = 0; i<particles.length; i++){
+			var particle = particles[i]; 
+			particle.updatePhysics(); 
+			with(particle.position)
+			{
+				if(y<-1000) y+=2000; 
+				if(x>1000) x-=2000; 
+				else if(x<-1000) x+=2000; 
+				if(z>1000) z-=2000; 
+				else if(z<-1000) z+=2000; 
+			}				
+		}
+		camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+		camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+		camera.lookAt(scene.position); 
+		renderer.render( scene, camera );
 	}
-	camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-	camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
-	camera.lookAt(scene.position); 
-	renderer.render( scene, camera );
-}
-init();
+	init();
 </script>
 </body>
 </html>

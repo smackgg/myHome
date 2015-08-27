@@ -3,7 +3,6 @@
 *	功能：页面翻动，页面内部class为container的容器进行180度翻转
 *	将所有页面class设置page
 */
-
 (function($){
 	window.onload = function(){
 		new myHomeMain();
@@ -47,6 +46,7 @@
 			_this.ctrlTo();
 			_this.mobile();
 			_this.leftCtrl();
+			_this.skillPre();
 		},
 
 		// 鼠标滚轮下滑 fn 回调函数
@@ -93,6 +93,7 @@
 				}, 800);
 			}
 			_this.leftCtrl();
+			this.skill(this.data.count);
 		},
 		// 鼠标滚轮上滑
 		up: function (ele, handler) {
@@ -120,6 +121,7 @@
 				$('.page' + _this.data.count + '>.container').addClass('rotateR');
 			}
 			_this.leftCtrl();
+			this.skill(this.data.count);
 		},
 		// 事件绑定
 		addEvent:function (ele,type,fn) {
@@ -175,23 +177,60 @@
 				}
 			},100);
 		},
+		// 第二页掌握技能
+		skill: function(count){
+			if(this.browser().mobile === true){
+				if(count==2){	
+					setTimeout(function(){
+						$('#skill1,#skill2').css('width','250px');
+						$('#skill3').css('width','200px');
+						$('#skill4').css('width','180px');
+						$('#skill5').css('width','160px');
+						$('#skill6').css('width','80px');
+					},1000);
+				}else{
+					$('#skill>li').css('width','0px');
+				}	
+			}else{
+				if(count==2){	
+					setTimeout(function(){
+						$('#skill1,#skill2').css('width','600px');
+						$('#skill3').css('width','550px');
+						$('#skill4').css('width','400px');
+						$('#skill5').css('width','350px');
+						$('#skill6').css('width','300px');
+					},1000);
+				}else{
+					$('#skill>li').css('width','0px');
+				}	
+			}	
+		},
+		skillPre:function(){
+			$('#skill>li').mouseenter(function(e){
+				var list = e.currentTarget.children;
+				$(list).css('display','block');
+			}).mouseleave(function(e){
+				var list = e.currentTarget.children;
+				$(list).css('display','none');
+			});
+			if(this.browser().mobile === true){
+				$('#skill>li').css({
+					'height': '20px',
+					'font-size': '10px',
+					'line-height': '20px'
+				});
+				$('#skill').css('left','0px');
+				$('#skill>li>.list>li').css({
+					'line-height':'20px',
+				});
+			}
+		},
 		// 左侧控制圆点
 		leftCtrl: function(){
-				// 移动端处理
-				if(this.browser().mobile === true){
-					$('.leftCtrl>ul>li').css({
-						'width': '24px',
-						'height': '15px',
-						'margin': '6px 0px 0px 3px'
-					});
-					$('.leftCtrl').css({
-						'opacity':'0.4'
-					});
-
-				}
-				count = this.data.count;
-				$('.leftCtrl>ul>li[index='+ count + ']').css('background-color','#000');
-				$('.leftCtrl>ul>li:not([index='+ count + '])').css('background-color','#fff');
+			count = this.data.count;
+			$('.leftCtrl>ul>li[index='+ count + ']').css('background-color','#000');
+			$('.leftCtrl>ul>li:not([index='+ count + '])').css('background-color','#fff');
+			this.skill(this.data.count);
 		},
 		// 左侧小圆点以及导航的事件绑定
 		ctrlTo: function(){

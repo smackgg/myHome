@@ -24,7 +24,9 @@ html,body{
 	transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .page .container{
+	position: relative;
 	height: 100%;
+	z-index: 1000;
 }
 .page1{
 	visibility: visible;
@@ -83,13 +85,13 @@ html,body{
 .leftCtrl{
 	width: 30px;
 	height: 90px;
-	background-color: rgba(200,255,100,.6);
+	background-color: rgba(255,255,255,.2);
 	position: fixed;
 	left: 10px;
 	top: 50%;
 	margin-top: -50px;
 	border-radius: 20px;
-
+	z-index: 1000;
 }
 .leftCtrl ul li{
 	width: 10px;
@@ -102,10 +104,94 @@ html,body{
 	background-color: #000;
 }
 .snow{
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	z-index: 1;
+}
+#skill{
+	position: absolute;
+	top: 100px;
+	left: 150px;
+}
+#skill p{
+	color: #fff;
+	font-size: 20px;
+}
+#skill li{
+	width: 0px;
+	height: 35px;
+	margin: 20px;
+	line-height: 35px;
+	padding-left: 10px;
+	border-radius: 3px;
+	-webkit-transition:width 1.5s ease-in-out;
+	-moz-transition:width 1.5s ease-in-out;
+	-o-transition:width 1.5s ease-in-out;
+	transition:width 1.5s ease-in-out;
+	text-overflow: clip;
+}
+#skill .list{
+	position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,.6);
+	color: #fff;
+	border-radius: 20px;
+}
+#skill .list li{
+	margin:0 0 0 30px;
+	list-style-type:circle;
+	width: auto;
+	line-height:30px;
+}
+#skill1{
+	background-color: #D6EFFF;
+	border-left: 4px solid #3498DB;
+	color: #3498DB;
+}
+#skill2{
+	background-color: #D6EFFF;
+	border-left: 4px solid #3498DB;
+	color: #3498DB;
+}
+#skill3{
+	background-color: #EAF6D0;
+	border-left: 4px solid #80BD01;
+	color: #80BD01;
+}
+#skill4{
+	background-color: #EAF6D0;
+	border-left: 4px solid #80BD01;
+	color: #80BD01;
+}
+#skill5{
+	background-color: #EAF6D0;
+	border-left: 4px solid #80BD01;
+	color: #80BD01;
+}
+#skill6{
+	background-color: #FFF6DD;
+	border-left: 4px solid #FDBC40;
+	color: #FDBC40;
+}
+#demo{
+	position: absolute;
+	width: 80%;
+	height: 200px;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	margin: auto;
+	background-color: #ccc;
+}
+.show-grid [class ^="col-"] {
+	margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
 }
