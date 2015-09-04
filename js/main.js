@@ -228,8 +228,15 @@
 		// 左侧控制圆点
 		leftCtrl: function(){
 			count = this.data.count;
-			$('.leftCtrl>ul>li[index='+ count + ']').css('background-color','#000');
-			$('.leftCtrl>ul>li:not([index='+ count + '])').css('background-color','#fff');
+			$('.leftCtrl>ul>li[index='+ count + ']').css({
+				'background-color':'#000',
+				'border':'3px solid #fff'
+				// 'border':'2px solid #fff'
+			});
+			$('.leftCtrl>ul>li:not([index='+ count + '])').css({
+				'background-color':'#fff',
+				'border':'none'
+			});
 			this.skill(this.data.count);
 		},
 		// 左侧小圆点以及导航的事件绑定
@@ -343,4 +350,72 @@
 	   	}
 	}
 }(jQuery));
-
+			var iSpeedX=6,
+				iSpeedY=8;
+				$ele1 = "#wrapper1",
+				$ele2 = "#wrapper2",
+				$ele3 = "#wrapper3",
+				$ele4 = "#wrapper4",
+				$ele = ".wrapper"
+			var stop = false;
+			$('#stop').click(function(e){
+        		console.log(e);
+        		stop = true;
+        	})
+        	$('#start').click(function(e){
+        		if (stop) {
+        			startMove();
+        			console.log(e);
+        			stop =false;
+        		};	
+        	})
+        function move($ele, iSpeedX, iSpeedY){
+        	setTimeout(function(){
+        		var ele = $($ele),
+        			left = ele.position().left + iSpeedX,
+        			top = ele.position().top + iSpeedY;
+        			console.log(left,top);
+        		// 下边缘
+        		if(top >= ele.parent().height() - ele.height()){
+        			iSpeedY *= -1;
+        			top = ele.parent().height() - ele.height();
+        		}
+        		// 上边缘
+        		if(top <= 0){
+        			iSpeedY *= -1;
+        			top = 0;
+        		}
+        		// 左边缘
+        		if(left <= 0){
+        			iSpeedX *= -1;
+        			left = 0;
+        		}
+        		// 右边缘
+        		if(left >= ele.parent().width() - ele.width()){
+        			iSpeedX *= -1;
+        			left = ele.parent().width() - ele.width();
+        		}
+        		ele.css({
+        			'left': left+'px',
+        			'top' : top + 'px'
+        		});
+        		if(!stop){
+					move($ele, iSpeedX, iSpeedY);
+        		}
+        	},30);
+        }
+        function startMove(){
+        	setTimeout(function(){
+	        	move($ele1, iSpeedX, iSpeedY)
+	        },500);
+	        setTimeout(function(){
+				move($ele2, iSpeedX, iSpeedY)
+	        },1200);
+	        setTimeout(function(){
+				move($ele3, iSpeedX, iSpeedY)
+	        },1900);
+	        setTimeout(function(){
+				move($ele4, iSpeedX, iSpeedY)
+	        },2600);
+        }
+	    startMove();
