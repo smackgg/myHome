@@ -15,8 +15,7 @@ html,body{
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	top: 100%;
-	left: 0;
+	left: 100%;
 	overflow: hidden;
 	-webkit-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 	-moz-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -34,7 +33,7 @@ html,body{
 	box-shadow: 0px 0px 10px 10px #ccc inset;
 }
 .page1{
-	top: 0;
+	left: 0;
 }
 .introduce{
 	position: absolute;
@@ -53,29 +52,35 @@ html,body{
 	overflow: auto;
 }
 /* 左侧控制 */
-.leftCtrl{
-	width: 30px;
-	height: 90px;
+.bottomCtrl{
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
 	position: absolute;
-	left: 10px;
-	top: 50%;
-	margin-top: -50px;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -45px;
 	z-index: 1000;
 }
-.leftCtrl ul li{
+.bottomCtrl ul{
+	height: 30px;
+}
+.bottomCtrl ul li{
 	-webkit-box-sizing:content-box;
 	-moz-box-sizing:content-box;
 	-ms-box-sizing:content-box;
 	-o-box-sizing:content-box;
 	box-sizing:content-box;
+	float: left;
 	width: 10px;
 	height: 10px;
 	background-color: #fff;
-	margin: auto;
-	margin-top:15px;
+	margin: 10px 10px 10px 10px;
 	border-radius: 50%;
+	cursor: pointer;
 }
-.leftCtrl ul li:first-child{
+
+.bottomCtrl ul li:first-child{
 	background-color: #000;
 }
 .snow{
@@ -172,7 +177,7 @@ svg{
 		width: 15px;
 		height: 15px;
 	}
-	#content{
+	.content{
 		width: 80%;
 		height: 100%;
 		margin-top: 40px;
@@ -186,87 +191,33 @@ svg{
 }
 
 /*page1*/
-.wrapper{
+.content {
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	top: 50%;
-	left: 50%;
-	margin-left: -50px;
-	margin-top: -50px;
-}
-#wrapper1{
-	position: absolute;
-	margin-left: -250px;
-}
-#content1{
-	width: 100px;
-	height: 100px;
-	/*background-color: red;*/
-	border: 4px solid #fff;
-	border-radius: 50%;
+	font-size: 50px;
+	color: #fff;
 	text-align: center;
 	line-height: 100px;
-	font-size: 40px;
-	color: #fff;
-}
-#wrapper2{
-margin-left: -150px;
-}
-#content2{
-	width: 100px;
-	height: 100px;
-	background-color: yellow;
-	border: 4px solid #fff;
+	display: inline-block;
+	margin: 0;
 	border-radius: 50%;
-	text-align: center;
-	line-height: 100px;
-	font-size: 40px;
-	color: #fff;
+	position: relative;
+	background: -webkit-radial-gradient(50% 120%, circle cover, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+	);
 }
-#wrapper3{
-margin-left: 100px;
+.content:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(50% 0px, circle, #ffffff, rgba(255, 255, 255, 0) 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
 }
-#content3{
-	width: 100px;
-	height: 100px;
-	background-color: green;
-	border: 4px solid #fff;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 100px;
-	font-size: 40px;
-	color: #fff;
-}
-#wrapper4{
-margin-left: 200px;
-}
-#content4{
-	width: 100px;
-	height: 100px;
-	background-color: blue;
-	border: 4px solid #fff;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 100px;
-	font-size: 40px;
-	color: #fff;
-}
-#stop{
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	left: 50%;
-	top: 80%;
-	margin-left: -200px;
-	background-color: red;
-}
-#start{
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	left: 50%;
-	top: 80%;
-	margin-left: -101px;
-	background-color: green;
+.page1 .container .row div{
+	position: relative;
 }

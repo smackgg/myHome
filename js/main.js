@@ -36,21 +36,21 @@
 			function handler(e){
 				event = e||window.event;
 				if(event.wheelDelta < 0){
-					_this.down(ele, pageLen, handler);
+					_this.toLeft(ele, pageLen, handler);
 				}else{		
-					_this.up(ele, handler);			
+					_this.toRight(ele, handler);			
 				}
 				return false;	
 			}
 			_this.introduce();
 			_this.ctrlTo();
 			_this.mobile();
-			_this.leftCtrl();
+			_this.bottomCtrl();
 			_this.skillPre();
 		},
 
 		// 鼠标滚轮下滑 fn 回调函数
-		down: function(ele, pageLen, handler, fn) {
+		toLeft: function(ele, pageLen, handler, fn) {
 			var _this = this;
 			if(_this.browser().mobile === true){
 				$('body').unbind('touchmove');
@@ -66,23 +66,23 @@
 			if(_this.data.count < pageLen){
 				console.log(_this.data.count);
 				$('.page' + _this.data.count).css({
-					'top': '-100%'
+					'left': '-100%'
 				});
 				$('.page' + _this.data.count + '>.container').removeClass('rotateL rotateR');
 				_this.data.count++;
 				$('.page' + _this.data.count).css({
-					'top': '0'
+					'left': '0'
 				});
 				$('.page' + _this.data.count + '>.container').addClass('rotateL');
 			}else if(_this.data.count == pageLen){
 				$('.page:not(".page1,.page' + pageLen + '")').css({
-					'top': '100%',
+					'left': '100%',
 					'display':'none'
 				});
-				$('.page' + pageLen).css('top', '100%');
+				$('.page' + pageLen).css('left', '100%');
 				$('.page' + _this.data.count + '>.container').removeClass('rotateL rotateR');
 				$('.page1').css({
-					'top':'0px'
+					'left':'0px'
 				});
 				$('.page1>.container').addClass('rotateR');
 				_this.data.count = 1;
@@ -92,11 +92,11 @@
 					});
 				}, 800);
 			}
-			_this.leftCtrl();
+			_this.bottomCtrl();
 			this.skill(this.data.count);
 		},
 		// 鼠标滚轮上滑
-		up: function (ele, handler) {
+		toRight: function (ele, handler) {
 			var _this = this;
 			if(_this.browser().mobile === true){
 				$('body').unbind('touchmove');
@@ -111,16 +111,16 @@
 			if(_this.data.count > 1){
 				console.log(_this.data.count);
 				$('.page' + _this.data.count).css({
-					'top': '100%'
+					'left': '100%'
 				});
 				$('.page' + _this.data.count + '>.container').removeClass('rotateL rotateR');
 				_this.data.count--;
 				$('.page' + _this.data.count).css({
-					'top': '0'
+					'left': '0'
 				});
 				$('.page' + _this.data.count + '>.container').addClass('rotateR');
 			}
-			_this.leftCtrl();
+			_this.bottomCtrl();
 			this.skill(this.data.count);
 		},
 		// 事件绑定
@@ -226,14 +226,14 @@
 			}
 		},
 		// 左侧控制圆点
-		leftCtrl: function(){
+		bottomCtrl: function(){
 			count = this.data.count;
-			$('.leftCtrl>ul>li[index='+ count + ']').css({
+			$('.bottomCtrl>ul>li[index='+ count + ']').css({
 				'background-color':'#000',
 				'border':'3px solid #fff'
 				// 'border':'2px solid #fff'
 			});
-			$('.leftCtrl>ul>li:not([index='+ count + '])').css({
+			$('.bottomCtrl>ul>li:not([index='+ count + '])').css({
 				'background-color':'#fff',
 				'border':'none'
 			});
@@ -242,12 +242,12 @@
 		// 左侧小圆点以及导航的事件绑定
 		ctrlTo: function(){
 			var _this = this;
-			$('.leftCtrl>ul>li').click(function(e){
+			$('.bottomCtrl>ul>li').click(function(e){
 				// console.log(e);
 				// console.log($(this).attr('index'));
 				_this.toPage($(this).attr('index'));
 			});
-			$('.dropdown-menu>li>a').click(function(e){
+			$('.droptoLeft-menu>li>a').click(function(e){
 				_this.toPage($(this).attr('index'));
 			});
 		},
@@ -264,20 +264,20 @@
 				}
 				if(i<toPage){
 					$('.page' + i).css({
-						'top': '-100%',
+						'left': '-100%',
 					});
 				}else if(i>toPage){
 					$('.page' + i).css({
-						'top': '100%',
+						'left': '100%',
 					});
 				}else{
 					$('.page' + i).css({
-						'top': '0'
+						'left': '0'
 					})
 				}
 			};
 			_this.data.count = toPage;
-			_this.leftCtrl();
+			_this.bottomCtrl();
 			setTimeout(function(){
 				$('.page:not(.page' + toPage).css({
 					'display':'block'
@@ -308,23 +308,22 @@
 			    if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
 			    	// right
 			        _this.data.mobileTo = 'right';
+			        _this.toRight(ele);
 			    }
 			    else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
 			    	// left
 			        _this.data.mobileTo = 'left';
+			        _this.toLeft(ele, _this.data.$pageEle.length);
 			    }
 			    else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
 			    	// bottom
 			    	console.log('bottom');
 			        _this.data.mobileTo = 'bottom';
-			        _this.up(ele);
-
 			    }
 			    else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
 			    	// top
 			    	console.log('top');
-			        _this.data.mobileTo = 'top';
-			         _this.down(ele, _this.data.$pageEle.length);
+			        _this.data.mobileTo = 'top';     
 			    }
 			    else{
 			    	// just touch
@@ -350,72 +349,3 @@
 	   	}
 	}
 }(jQuery));
-			var iSpeedX=6,
-				iSpeedY=8;
-				$ele1 = "#wrapper1",
-				$ele2 = "#wrapper2",
-				$ele3 = "#wrapper3",
-				$ele4 = "#wrapper4",
-				$ele = ".wrapper"
-			var stop = false;
-			$('#stop').click(function(e){
-        		console.log(e);
-        		stop = true;
-        	})
-        	$('#start').click(function(e){
-        		if (stop) {
-        			startMove();
-        			console.log(e);
-        			stop =false;
-        		};	
-        	})
-        function move($ele, iSpeedX, iSpeedY){
-        	setTimeout(function(){
-        		var ele = $($ele),
-        			left = ele.position().left + iSpeedX,
-        			top = ele.position().top + iSpeedY;
-        			console.log(left,top);
-        		// 下边缘
-        		if(top >= ele.parent().height() - ele.height()){
-        			iSpeedY *= -1;
-        			top = ele.parent().height() - ele.height();
-        		}
-        		// 上边缘
-        		if(top <= 0){
-        			iSpeedY *= -1;
-        			top = 0;
-        		}
-        		// 左边缘
-        		if(left <= 0){
-        			iSpeedX *= -1;
-        			left = 0;
-        		}
-        		// 右边缘
-        		if(left >= ele.parent().width() - ele.width()){
-        			iSpeedX *= -1;
-        			left = ele.parent().width() - ele.width();
-        		}
-        		ele.css({
-        			'left': left+'px',
-        			'top' : top + 'px'
-        		});
-        		if(!stop){
-					move($ele, iSpeedX, iSpeedY);
-        		}
-        	},30);
-        }
-        function startMove(){
-        	setTimeout(function(){
-	        	move($ele1, iSpeedX, iSpeedY)
-	        },500);
-	        setTimeout(function(){
-				move($ele2, iSpeedX, iSpeedY)
-	        },1200);
-	        setTimeout(function(){
-				move($ele3, iSpeedX, iSpeedY)
-	        },1900);
-	        setTimeout(function(){
-				move($ele4, iSpeedX, iSpeedY)
-	        },2600);
-        }
-	    startMove();
