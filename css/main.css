@@ -247,15 +247,17 @@ svg{
     }
     .rotate { 
         animation: 1.2s linear 0s normal none infinite running rotating; 
+        -webkit-animation: 1.2s linear 0s normal none infinite running rotating;
         background-image: url("http://7xl432.com1.z0.glb.clouddn.com/music_off.png"); 
         background-size: 100% 100%; 
-        height: 30px; left: 10px; 
+        height: 30px; 
+        left: 10px; 
         position: relative; 
         top: 10px; 
         width: 30px; 
     }
     @keyframes rotating {
-        0% {transform: rotate(0deg);}
+        0% { transform: rotate(0deg);}
         100% {transform: rotate(360deg);}
     }
     @-webkit-keyframes rotating { 
