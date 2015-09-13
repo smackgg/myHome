@@ -1,210 +1,210 @@
 *{margin: 0px;padding: 0px;list-style-type: none;}
 html,body{
-	height: 100%;
-	overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 #pageHome{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	/*background-color: #000;*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-color: #000;*/
 
 }
 .page{
-	background-size: 100% 100%;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 100%;
-	overflow: hidden;
-	-webkit-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	-moz-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	-ms-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	-o-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
-	background-image: url('http://7xl432.com1.z0.glb.clouddn.com/page44.jpg');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 100%;
+    overflow: hidden;
+    -webkit-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -ms-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-image: url('http://7xl432.com1.z0.glb.clouddn.com/page44.jpg');
 }
 .page .container{
-	position: relative;
-	height: 100%;
-	z-index: 1000;
-	background-color: rgba(0,0,0,.3);
-	background-size: 100% 100%;
-	box-shadow: 0px 0px 10px 10px #ccc inset;
+    position: relative;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,.3);
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px 10px #ccc inset;
 }
 .page1{
-	left: 0;
+    left: 0;
 }
 .introduce{
-	position: absolute;
-	width: 60%;
-	height: 60%;
-	padding: 40px;
-	top: 0px;
-	right: 0px;
-	left: 0px;
-	bottom: 0px;
-	margin: auto;
-	font-size: 28px;
-	color: #fff;
-	line-height: 50px;
-	font-weight: bolder;
-	overflow: auto;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    padding: 40px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    margin: auto;
+    font-size: 28px;
+    color: #fff;
+    line-height: 50px;
+    font-weight: bolder;
+    overflow: auto;
 }
 /* 左侧控制 */
 .bottomCtrl{
-	width: 200px;
-	height: 30px;
-	line-height: 30px;
-	position: absolute;
-	bottom: 10px;
-	left: 50%;
-	margin-left: -45px;
-	z-index: 1000;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -45px;
+    z-index: 1000;
 }
 .bottomCtrl ul{
-	height: 30px;
+    height: 30px;
 }
 .bottomCtrl ul li{
-	-webkit-box-sizing:content-box;
-	-moz-box-sizing:content-box;
-	-ms-box-sizing:content-box;
-	-o-box-sizing:content-box;
-	box-sizing:content-box;
-	float: left;
-	width: 10px;
-	height: 10px;
-	background-color: #fff;
-	margin: 10px 10px 10px 10px;
-	border-radius: 50%;
-	cursor: pointer;
+    -webkit-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -o-box-sizing:content-box;
+    box-sizing:content-box;
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px 10px 10px 10px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .bottomCtrl ul li:first-child{
-	background-color: #000;
+    background-color: #000;
 }
 .snow{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
 }
 .page2 .container{
-	display:table;
+    display:table;
 }
 #skill{
-	width: 700px;
-	display: inline-block;
-	vertical-align:middle; 
-	display:table-cell;
-	margin-left: 0 auto;
+    width: 700px;
+    display: inline-block;
+    vertical-align:middle; 
+    display:table-cell;
+    margin-left: 0 auto;
 }
 #skill p{
-	color: #fff;
-	font-size: 20px;
+    color: #fff;
+    font-size: 20px;
 }
 #skill li{
-	width: auto;
-	height: 35px;
-	margin: 20px;
-	line-height: 35px;
-	padding-left: 10px;
-	border-radius: 3px;
-	-webkit-transition:width 1.5s ease-in-out;
-	-moz-transition:width 1.5s ease-in-out;
-	-o-transition:width 1.5s ease-in-out;
-	transition:width 1.5s ease-in-out;
-	overflow: hidden;
+    width: auto;
+    height: 35px;
+    margin: 20px;
+    line-height: 35px;
+    padding-left: 10px;
+    border-radius: 3px;
+    -webkit-transition:width 1.5s ease-in-out;
+    -moz-transition:width 1.5s ease-in-out;
+    -o-transition:width 1.5s ease-in-out;
+    transition:width 1.5s ease-in-out;
+    overflow: hidden;
 }
 #skill .list{
-	position: absolute;
-	display: none;
-	background-color: rgba(0,0,0,.6);
-	color: #fff;
-	border-radius: 20px;
+    position: absolute;
+    display: none;
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+    border-radius: 20px;
 }
 #skill .list li{
-	margin:10px 0 0 30px;
-	width: auto;
-	line-height:30px;
+    margin:10px 0 0 30px;
+    width: auto;
+    line-height:30px;
 }
 #skill .list li:before{
-	content: "\25ba";
-	position: absolute;
-	left: 10px;
+    content: "\25ba";
+    position: absolute;
+    left: 10px;
 }
 #skill1{
-	background-color: #D6EFFF;
-	border-left: 4px solid #3498DB;
-	color: #3498DB;
+    background-color: #D6EFFF;
+    border-left: 4px solid #3498DB;
+    color: #3498DB;
 }
 #skill2{
-	background-color: #D6EFFF;
-	border-left: 4px solid #3498DB;
-	color: #3498DB;
+    background-color: #D6EFFF;
+    border-left: 4px solid #3498DB;
+    color: #3498DB;
 }
 #skill3{
-	background-color: #EAF6D0;
-	border-left: 4px solid #80BD01;
-	color: #80BD01;
+    background-color: #EAF6D0;
+    border-left: 4px solid #80BD01;
+    color: #80BD01;
 }
 #skill4{
-	background-color: #EAF6D0;
-	border-left: 4px solid #80BD01;
-	color: #80BD01;
+    background-color: #EAF6D0;
+    border-left: 4px solid #80BD01;
+    color: #80BD01;
 }
 #skill5{
-	background-color: #EAF6D0;
-	border-left: 4px solid #80BD01;
-	color: #80BD01;
+    background-color: #EAF6D0;
+    border-left: 4px solid #80BD01;
+    color: #80BD01;
 }
 #skill6{
-	background-color: #FFF6DD;
-	border-left: 4px solid #FDBC40;
-	color: #FDBC40;
+    background-color: #FFF6DD;
+    border-left: 4px solid #FDBC40;
+    color: #FDBC40;
 }
 
 svg{
-	float: left;
+    float: left;
 }
 @media (max-width: 768px) {
-	.row p{
-		font-weight: bolder;
-		font-size: .3em;
-	}
-	svg{
-		width: 15px;
-		height: 15px;
-	}
-	.content{
-		width: 80%;
-		height: 100%;
-		margin-top: 40px;
-		background-color: rgba(255, 255, 255, .4);
-		color: #000;
-		padding: 20px;
-		border-radius: 30px;
-		font-size: 20px;
-		padding: 0px 30px 0px 30px;
-	}
+    .row p{
+        font-weight: bolder;
+        font-size: .3em;
+    }
+    svg{
+        width: 15px;
+        height: 15px;
+    }
+    .content{
+        width: 80%;
+        height: 100%;
+        margin-top: 40px;
+        background-color: rgba(255, 255, 255, .4);
+        color: #000;
+        padding: 20px;
+        border-radius: 30px;
+        font-size: 20px;
+        padding: 0px 30px 0px 30px;
+    }
 }
 
 /*page1*/
 .content {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	font-size: 50px;
-	color: #fff;
-	text-align: center;
-	line-height: 100px;
-	display: inline-block;
-	margin: 0;
-	border-radius: 50%;
-	position: relative;
-	background: -webkit-radial-gradient(50% 120%, circle cover, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
-	);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
+    background: -webkit-radial-gradient(50% 120%, circle cover, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    );
 }
 .content:before {
   content: "";
@@ -219,5 +219,93 @@ svg{
   z-index: 2;
 }
 .page1 .container .row div{
-	position: relative;
+    position: relative;
 }
+
+/* 音乐 */
+    .off{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-image: url("http://7xl432.com1.z0.glb.clouddn.com/music_off.png");
+        background-position: center center;
+        background-repeat: no-repeat; 
+        background-size: 30px 30px;
+    }
+    #audio_btn {
+        background-repeat: no-repeat; 
+        height: 50px; 
+        width: 50px; 
+        z-index: 200; 
+        cursor: pointer; 
+    }
+    .play_yinfu { 
+        background-image: url("http://7xl432.com1.z0.glb.clouddn.com/music.gif"); 
+        background-position: center center; 
+        background-repeat: no-repeat; 
+        background-size: 60px 60px; 
+    }
+    .rotate { 
+        animation: 1.2s linear 0s normal none infinite running rotating; 
+        background-image: url("http://7xl432.com1.z0.glb.clouddn.com/music_off.png"); 
+        background-size: 100% 100%; 
+        height: 30px; left: 10px; 
+        position: relative; 
+        top: 10px; 
+        width: 30px; 
+    }
+    @keyframes rotating {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+    @-webkit-keyframes rotating { 
+        0% {-webkit-transform: rotate(0deg);}
+        100% {-webkit-transform: rotate(360deg);}
+    }
+/* 音乐 END*/
+/* 首页个人信息 */
+    .about{ position:absolute; float:left; left:50%; top:40%; font-size:18px;}
+    .about ul{ float:left; width:600px; position:relative; left:-50%;}
+    .about li{ float:left; width:100px; height:100px; margin:0 10px 20px;opacity:0.5; background:#f60\9; text-align:center; line-height:100px; color:#fff; border-radius:50%; cursor:pointer; transition:all ease .3s;}
+    .about li i{ font-style:normal; font-family:Comic Sans MS}
+    .about li span{ display:none;}
+    .about li:hover{opacity:1; box-shadow:0 0 20px #fff;}
+    .about li:hover span{ display:block;}
+    .about li:hover i{ display:none;}
+    .li-1{-webkit-animation: right 1s infinite ease-in-out; -moz-animation: right 1s infinite ease-in-out; animation: right 1s infinite ease-in-out; }
+    .li-2 {-webkit-animation: left 1.1s infinite ease-in-out; -moz-animation: left 1.1s infinite ease-in-out; animation: left 1.1s infinite ease-in-out; }
+    .li-3 {-webkit-animation: right 1.05s infinite ease-in-out; -moz-animation: right 1.05s infinite ease-in-out; animation: right 1.05s infinite ease-in-out; }
+    .li-4{-webkit-animation: left 1.15s infinite ease-in-out; -moz-animation: left 1.15s infinite ease-in-out; animation: left 1.15s infinite ease-in-out; }
+    .li-5 {-webkit-animation: right 1.1s infinite ease-in-out; -moz-animation: right 1.1s infinite ease-in-out; animation: right 1.1s infinite ease-in-out; }
+    .about li:nth-child(1) { background: #ff005d;}
+    .about li:nth-child(2) { background: #35ff99;}
+    .about li:nth-child(3) { background: #008597;}
+    .about li:nth-child(4) { background: #ffcc00;}
+    .about li:nth-child(5) { background: #f00;}
+    @-webkit-keyframes left {  
+        0% {-webkit-transform: translate(5px);}
+        50% {-webkit-transform: translate(-5px);}
+        100% {-webkit-transform: translate(5px);}
+    }
+    @-moz-keyframes left {  
+        0% {-moz-transform: translate(5px);}
+        50% {-moz-transform: translate(-5px);}
+        100% {-moz-transform: translate(5px);}
+    }
+    @keyframes left {  
+        0% {transform: translate(5px);}
+        50% {transform: translate(-5px);}
+        100% {transform: translate(5px);}
+    }
+    @-moz-keyframes right {  
+        0% {-moz-transform: translate(-5px);}
+        50% {-moz-transform: translate(5px);}
+        100% {-moz-transform: translate(-5px);}
+    }
+    @keyframes right {  
+        0% {transform: translate(-5px);}
+        50% {transform: translate(5px);}
+        100% {transform: translate(-5px);}
+    }
+
+/* 首页个人信息 END */
