@@ -21,7 +21,7 @@
             count: 1,
             // 所有页面
             $pageEle: $('.page'),
-            // 首页显示
+            // 显示
             introduce: '我是许岩，现就读于哈尔滨理工大学测通学院物联网工程专业，爱前端，爱游戏，爱运动。性格开朗、稳重、有活力，待人热情、真诚，能吃苦耐劳，有较强的实际动手能力和团体协作精神。',
             mobileTo:''
         },
@@ -52,7 +52,7 @@
         // 鼠标滚轮下滑 fn 回调函数
         toLeft: function(ele, pageLen, handler, fn) {
             var _this = this;
-            if(_this.browser().mobile === true){
+            if(_this.browser().mobile === true && $(window).width()<767){
                 $('body').unbind('touchmove');
                 var timerMobile = setTimeout(function(){
                     _this.mobile();
@@ -98,7 +98,7 @@
         // 鼠标滚轮上滑
         toRight: function (ele, handler) {
             var _this = this;
-            if(_this.browser().mobile === true){
+            if(_this.browser().mobile === true && $(window).width()<767){
                 $('body').unbind('touchmove');
                 var timerMobile = setTimeout(function(){
                     _this.mobile();
@@ -152,7 +152,7 @@
                 event.cancelBubble = true;
             }
         },
-        // 首页自我介绍
+        // 自我介绍
         introduce : function(){
             
             var _this = this,
@@ -160,7 +160,7 @@
                 arr = str.split('');            
                 ele = document.getElementsByClassName('introduce')[0];
                 // 移动端样式
-                if(_this.browser().mobile === true){
+                if(_this.browser().mobile === true && $(window).width()<767){
                     // console.log(_this.browser().mobile);
                         $('.introduce').css({
                             'width': '70%',
@@ -179,7 +179,7 @@
         },
         // 第二页掌握技能
         skill: function(count){
-            if(this.browser().mobile === true){
+            if(this.browser().mobile === true && $(window).width()<767){
                 if(count==2){   
                     setTimeout(function(){
                         $('#skill1,#skill2').css('width','250px');
@@ -213,7 +213,7 @@
                 var list = e.currentTarget.children;
                 $(list).css('display','none');
             });
-            if(this.browser().mobile === true){
+            if(this.browser().mobile === true && $(window).width()<767){
                 $('#skill>li').css({
                     'height': '20px',
                     'font-size': '10px',
@@ -366,3 +366,20 @@ $('#audio_btn').click(function(){
         $('#media')[0].play();
     }
 })
+
+// page1
+$()
+
+$('.about>ul>.wrapper').mouseenter(function(e){
+    console.log(e.currentTarget.classList[0]);
+    console.log(e.currentTarget.classList[0]+'>.aboutMe');
+    $('.'+e.currentTarget.classList[0]+'>.aboutMe').css({
+        // 'display':'block',
+        'opacity':'1'
+    });
+}).mouseleave(function(){
+    $('.aboutMe').css({
+        // 'display':'none',
+        'opacity':'0'
+    });
+});
