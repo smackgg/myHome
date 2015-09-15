@@ -3,6 +3,11 @@ html,body{
     height: 100%;
     overflow: hidden;
 }
+body{
+    background-image: url('http://7xl432.com1.z0.glb.clouddn.com/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
 #pageHome{
     position: relative;
     width: 100%;
@@ -17,19 +22,19 @@ html,body{
     position: absolute;
     left: 100%;
     overflow: hidden;
+
     -webkit-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
     -moz-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
     -ms-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
     -o-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    background-image: url('http://7xl432.com1.z0.glb.clouddn.com/page44.jpg');
+    
 }
 .page .container{
     position: relative;
     height: 100%;
     z-index: 1000;
     background-color: rgba(0,0,0,.3);
-    background-size: 100% 100%;
     box-shadow: 0px 0px 10px 10px #ccc inset;
 }
 .page1{
@@ -37,8 +42,8 @@ html,body{
 }
 .introduce{
     position: absolute;
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
     padding: 40px;
     top: 0px;
     right: 0px;
@@ -357,16 +362,14 @@ html,body{
             line-height:40px; 
         }
     }
-
-
     .aboutMe{
-        background-color: rgba(0,0,0,.4);
+        background-color: rgba(255,255,255,.4);
         position: absolute;
         border-radius: 20px;
         padding: 10px;
-        /*display: none;*/
-        opacity: 0;
-
+        display: none;
+        color: #000;
+        font-weight: bolder;
         -webkit-transition: all 2s ease;
         -moz-transition: all 2s ease;
         -ms-transition: all 2s ease;
@@ -375,8 +378,6 @@ html,body{
     }
     .aboutMe ul{
         width: 220px;
-        height: 100px;
-
     }
     .aboutMe ul li{
         margin-top: 10px;
@@ -392,36 +393,107 @@ html,body{
         margin-left: 10px;
         height: 30px;
     }
-    #aboutMe1{
-        margin-top: 20px;
+    #aboutMe1,#aboutMe3{
+        top: 120px;
     }
-    #aboutMe2{
-        top: -140px;
+    #aboutMe2, #aboutMe4{
+        top: -170px;
+        left: -50px;
     }
-    #aboutMe2 ul{
-        width: 250px;
-        height: 40px;
+    #aboutMe4 ul{
+        width: 260px;
+    }
+    #aboutMe3 ul{
+        width: 300px;
     }
     @media (max-width: 767px) {
         .aboutMe p{
             font-weight: bolder;
-            font-size: .3em;
+            font-size: .5em;
         }
         .aboutMe svg{
             width: 15px;
             height: 15px;
         }
-        .content{
-            width: 80%;
-            height: 100%;
-            margin-top: 40px;
-            background-color: rgba(255, 255, 255, .4);
-            color: #000;
-            padding: 20px;
-            border-radius: 30px;
-            font-size: 20px;
-            padding: 0px 30px 0px 30px;
-        }
     }
 
 /* 首页个人信息 END */
+
+
+.snow-container { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100%; 
+    pointer-events: none; 
+    z-index: 2000; 
+}
+
+
+.resume{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.5);
+    z-index: 3000;
+    overflow: auto;
+}
+.closeResume{
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #fff;
+    background-color: #000;
+    text-align:center;
+    font-size: 20px;
+    line-height: 30px;
+    cursor: pointer;
+    -webkit-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -ms-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.closeResume:hover{
+    background-color: #fff;
+    color: #000;
+}
+@media (max-width: 767px) {
+    .resume .img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+    .resume .img img{
+        width: 100%;
+        height: 100%;
+    }
+    .resume .closeResume:hover{
+        border: 2px solid #fff;
+        color: #ccc;
+    }
+}
+@media (min-width: 767px) {
+    .resume .img{
+        position: relative;
+        width: 800px;
+        left: 50%;
+        margin-left: -400px;
+    }
+    .resume .img img{
+        width: 100%;
+    }
+}
+#list{
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: none;
+    border-radius: 10px;
+}
