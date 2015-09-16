@@ -23,7 +23,8 @@
             $pageEle: $('.page'),
             // 显示
             introduce: '我是许岩，现就读于哈尔滨理工大学测通学院物联网工程专业，爱前端，爱游戏，爱运动。性格开朗、稳重、有活力，待人热情、真诚，能吃苦耐劳，有较强的实际动手能力和团体协作精神。',
-            mobileTo:''
+            mobileTo:'',
+            introduceD: false
         },
         
         // 页面滚动函数
@@ -42,7 +43,6 @@
                 }
                 return false;   
             }
-            _this.introduce();
             _this.ctrlTo();
             _this.mobile();
             _this.bottomCtrl();
@@ -94,6 +94,12 @@
             }
             _this.bottomCtrl();
             this.skill(this.data.count);
+
+            if(!this.data.introduceD && this.data.count==4){
+                console.log(!this.data.introduceD);
+                this.introduce();
+                this.data.introduceD = true;
+            }
         },
         // 鼠标滚轮上滑
         toRight: function (ele, handler) {
@@ -122,6 +128,12 @@
             }
             _this.bottomCtrl();
             this.skill(this.data.count);
+            
+            if(!this.data.introduceD && this.data.count==4){
+                console.log(!this.data.introduceD);
+                this.introduce();
+                this.data.introduceD = true;
+            }
         },
         // 事件绑定
         addEvent:function (ele,type,fn) {
@@ -159,6 +171,9 @@
                 str = _this.data.introduce,
                 arr = str.split('');            
                 ele = document.getElementsByClassName('introduce')[0];
+                // $('.introduce').on('mousewheel',function(e){
+                //     e.stopPropagation();
+                // });
                 // 移动端样式
                 if(_this.browser().mobile === true && $(window).width()<767){
                     // console.log(_this.browser().mobile);
@@ -283,6 +298,14 @@
                     'display':'block'
                 });
             }, 300);
+
+            this.skill(this.data.count);
+            if(!this.data.introduceD && this.data.count==4){
+                console.log(!this.data.introduceD);
+                this.introduce();
+                this.data.introduceD = true;
+
+            }
         },
         // 移动端处理
         mobile: function(){
@@ -382,6 +405,9 @@ $('.about>ul>.wrapper').mouseenter(function(e){
 $('.dropdown-menu>li>a[index=1]').click(function(){
      var $resume = $("<div class='resume'><div class='img'><img src='http://7xl432.com1.z0.glb.clouddn.com/resume.jpg'><div class='closeResume'>X</div></div></div>");
      $('#pageHome').append($resume);
+     $('.resume').bind('mousewheel',function(e){
+        e.stopPropagation();
+     });
      $('.closeResume').click(function(){
         console.log('cl');
         $('.resume').css({
@@ -389,9 +415,6 @@ $('.dropdown-menu>li>a[index=1]').click(function(){
         });
     });
 });
-
-
-
 
 // 雪花
 $(function(){
